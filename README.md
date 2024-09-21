@@ -1,7 +1,7 @@
 # 7th_web
 
 ## ✨ 깃허브 가이드
-[깃허브 과제 제출 가이드](https://abstracted-trade-be6.notion.site/ec7bb70152e144048af3bb7fe02a5a4f?pvs=4) 확인하러 가기
+[깃허브 과제 제출 가이드](http://kwu-umc-7th-github.notion.site) 확인하러 가기
 
 [깃허브 기본 가이드](https://www.notion.so/makeus-challenge/Github-aaa7f52c9fa64656b4e4ea02de51a0a9?pvs=4) 확인하러 가기
 
