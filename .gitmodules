@@ -1,0 +1,3 @@
+[submodule "week01/mission1"]
+	path = week01/mission1
+	url = git@github.com:dhdld/7th_web_mission.git
