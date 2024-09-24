@@ -1,0 +1,85 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="./main.css">
+    <meta charset="UTF-8">
+    <!-- http-equiv IE 주소바에 호환성 안보이게 content, Edge렌더링 엔진 쓰게 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 사용자의 디바이스 크기에 맞게 콘텐츠를 표시할 수 있도록 명시 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UMC_1차과제</title>
+</head>
+
+<body style="background-color:lavender;">
+    <h1 class="umc_title">UMC Study Plan</h1>
+    <br>
+    <br>
+    <hr>
+    <div class="search">
+        <input id="search-input" onkeypress="insert_enter(event)" placeholder="스터디 계획을 작성해보세요!" />
+    </div>
+    <div class="container">
+        <section class="todo">
+            <h3>해야 할 일</h3>
+            <ul id="todo_list">
+
+            </ul>
+        </section>
+        <section class="done">
+            <h3>해낸 일</h3>
+            <ul id="done_list">
+            </ul>
+        </section>
+    </div>
+    <script>
+        let todo_count = 1;
+        let done_count = 1;
+        function insert_enter(e) {
+            let inputBox = document.getElementById('search-input');
+            let toDoList = document.getElementById('todo_list');
+            if (e.keyCode == 13) {
+                let list = document.createElement('li');
+                list.setAttribute('id',todo_count);
+                console.log('list: '+list.id);
+                let btn = document.createElement('input');
+                Object.assign(btn, {
+                    type: 'button',
+                    value: '완료',
+                    id: 'done'+todo_count,
+                    onclick: function () {
+                        console.log('btn: '+btn.id.replace('done', ''));
+                        let doneList =document.getElementById('done_list');
+                        let todoItem = document.getElementById(btn.id.replace('done', ''));
+                        
+
+                       let newDone = todoItem.cloneNode(true);
+                       newDone.id = 'done'+done_count;
+                       doneList.appendChild(newDone);
+                       newDone.querySelector('input').value='삭제'; // 완료버튼을 삭제버튼으로 수정
+                       newDone.querySelector('input').onclick=function () {
+                        newDone.remove(); // 리스트 항목 삭제
+                       }
+                       done_count++;
+                       todoItem.remove();
+                      
+
+                    }
+                });
+                list.innerText = inputBox.value;
+                toDoList.appendChild(list);
+                let listId = document.getElementById(todo_count);
+                listId.appendChild(btn);
+                todo_count++;
+                inputBox.value=''; //입력창 초기화
+                
+            }
+            function remove_list() {
+
+            }
+            
+        }
+
+    </script>
+</body>
+
+</html>
