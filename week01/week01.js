@@ -1,48 +1,48 @@
-const planInput = document.querySelector('#input_component');
-const todoItemTemplate = document.querySelector('#todo_container');
-const todoList = document.querySelector('#todo_list');
-const doneList = document.querySelector('#done_list');
+const input = document.querySelector('#input_component');
+const todo_c = document.querySelector('#todo_container');
+const todo_l = document.querySelector('#todo_list');
+const done_l = document.querySelector('#done_list');
 
 // 해야 할 일에 item 생성
-const createTodoItem = (text) => {
-    const item = todoItemTemplate.cloneNode(true);  
+const create_item = (text) => {
+    const item = todo_c.cloneNode(true);  
     const itemText = item.querySelector('p');      
     itemText.textContent = text;
-    const todoButton = item.querySelector('.btn');  //버튼에 click event 추가
-    todoButton.addEventListener('click', () => moveToDone(item));
+    const todo_button = item.querySelector('.btn');  //버튼에 click event 추가
+    todo_button.addEventListener('click', () => move_item(item));
     item.style.display = 'flex';
     return item;
 }
 
 // 해야 할 일에 item 추가
-const addItem = (text) => {
-    const item = createTodoItem(text);  
-    todoList.appendChild(item);        
+const add_item = (text) => {
+    const item = create_item(text);  
+    todo_l.appendChild(item);        
 }
 
 // event 추가
-planInput.addEventListener('keydown', (event) => {
+input.addEventListener('keydown', (event) => {
     // enter 키가 눌러지지 않은 경우, input이 비어 있는 경우 return; 
-    if (event.key !== "Enter" || planInput.value.trim() === "") return;
+    if (event.key !== "Enter" || input.value.trim() === "") return;
     // 아이템 추가
-    addItem(planInput.value.trim());
-    planInput.value = "";
+    add_item(input.value.trim());
+    input.value = "";
 })
 
-// 해야 할 일의 완료를 누르면 해낸 일로 이동
-const moveToDone = (item) => {
-    const doneItem = createDoneItem(item);    
+// item 이동
+const move_item = (item) => {
+    const done_item = create_doneitem(item);    
     item.remove();                            
-    doneList.appendChild(doneItem);           
+    done_l.appendChild(done_item);           
 }
 
-// 해낸 일에 item 생성
-const createDoneItem = (item) => {
-    const doneItem = item.cloneNode(true);  
-    const doneButton = doneItem.querySelector('.btn');  
-    doneButton.textContent = '삭제'; 
-    doneButton.removeEventListener('click', moveToDone);            // 완료 event 제거
-    doneButton.addEventListener('click', () => doneItem.remove());  // 삭제 event 추가
-    doneItem.style.display = 'flex'; 
-    return doneItem; 
+// 해낸 일 item 
+const create_doneitem = (item) => {
+    const done_item = item.cloneNode(true);  
+    const done_button = done_item.querySelector('.btn');  
+    done_button.textContent = '삭제'; 
+    done_button.removeEventListener('click', move_item);            // 완료 event 제거
+    done_button.addEventListener('click', () => done_item.remove());  // 삭제 event 추가
+    done_item.style.display = 'flex'; 
+    return done_item; 
 }
