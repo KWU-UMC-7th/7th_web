@@ -1,0 +1,102 @@
+/* 기본 설정 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f6fa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  hr {
+    width: 80%;
+    border: none;
+    border-top: 2px solid #ccc;
+    margin-bottom: 20px;
+  }
+  
+  input {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid black;
+    /* border-radius: 4px; */
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+  
+  input::placeholder {
+    color: #ccc;
+  }
+  
+  .todo-container {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+  }
+  
+  .tasks, .done {
+    width: 45%;
+  }
+  
+  h2 {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+    display: inline-block;
+    border-bottom: 2px solid #ccc; 
+    padding-bottom: 3px; 
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  
+  li {
+    list-style: none; /* 기본 목록 점 제거 */
+    padding: 10px 0; /* 위아래 여백만 설정 (좌우는 0) */
+    margin-bottom: 10px; /* 항목 사이의 간격 */
+    font-weight: bold; /* 글자를 진하게 설정 */
+    font-size: 20px; /* 글자 크기 설정 */
+    border-bottom: 2px solid #ccc; /* 밑줄 설정 */
+    padding-bottom: 3px; /* 밑줄과 텍스트 사이의 간격 */
+    display: flex; /* 텍스트와 버튼 같은 요소들을 수평으로 배치 */
+    justify-content: space-between; /* 양쪽 끝으로 요소 정렬 */
+    align-items: center; /* 수직 가운데 정렬 */
+  }
+
+  
+  button {
+    background-color: #e0e0e0;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #b0b0b0;
+  }
+  
+  /* li.done-item {
+    background-color: #f0fdf4;
+    color: #555;
+  } */
+  
+  /* li.done-item button {
+    background-color: #f28c8c;
+    color: white;
+  } */
+  
