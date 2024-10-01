@@ -1,6 +1,6 @@
 import React from "react";
 import { MOVIES } from "../mocks/movies";
-import "./App.css"; // CSS를 분리하여 작성
+import "./App.css";
 
 const MovieList = () => {
   return (
