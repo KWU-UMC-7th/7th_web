@@ -1,0 +1,99 @@
+body {
+  background-color: #eef2f8;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+}
+
+.navbar {
+  height: 70px;
+  padding: 1.6rem;
+  margin: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+hr {
+  width: 80%;
+  border: 0px;
+  border-top: 2px solid #dae3ef;
+}
+
+.textbox {
+  margin-top: 10px;
+  width: 65%;
+  height: 40px;
+  padding-left: 15px;
+  border: 2px solid #000;
+}
+
+.textbox::placeholder {
+  color: #e7ebf3;
+  font-style: italic;
+  font-size: 19px;
+}
+
+.classification {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 40px;
+  /*align-items: center;*/
+  width: 70vw;
+}
+.font {
+  font-size: 19px;
+  font-weight: 600;
+}
+
+.todo_title {
+  text-align: center;
+  border-bottom: 3px solid #dae3ef;
+  margin-bottom: 40px;
+}
+
+.todo_container {
+  padding: 0px 80px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 20px;
+  height: 80vh;
+  width: 70vw;
+}
+
+.todo_item {
+  height: 40px;
+  width: 100%;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 4px solid #dae3ef;
+}
+
+.btn {
+  border: transparent;
+  background-color: #d6dff0;
+  height: 25px;
+}
