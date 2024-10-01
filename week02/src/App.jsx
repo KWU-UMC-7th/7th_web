@@ -17,6 +17,9 @@ function App() {
 
   // 1. 추가하기
   const addTodo = () => {
+    if (text.length.trim() === 0) {
+      alert("ㄴㄴㄴ");
+    }
     setTodos((prev) => [
       ...prev,
       { id: Math.floor(Math.random() * 100) + 2, task: text },
