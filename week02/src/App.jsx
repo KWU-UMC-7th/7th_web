@@ -10,8 +10,6 @@ function App() {
   const [editingId, setEditingId] = useState("");
   const [editText, setEditText] = useState("");
 
-  console.log(editText);
-
   // 렌더링 방지
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -26,73 +24,85 @@ function App() {
     setText("");
   };
 
-  //2. 삭제하기
+  // 2. 삭제하기
   const deleteTodo = (id) => {
     setTodos((prev) => prev.filter((item) => item.id !== id));
   };
 
-  //3. 수정하기 // 인자를 잘못받음 !!!!
+  // 3. 수정하기
   const updateTodo = (id, text) => {
     setTodos((prev) =>
       prev.map((item) => (item.id === id ? { ...item, task: text } : item))
     );
     setEditingId("");
+    setEditText("");
   };
-
-  // //  // 3. 수정하기
-  // const updateTodo = (id, editText) => {
-  //   setTodos(
-  //     (prev) =>
-  //       prev.map((item) =>
-  //         item.id === id ? { ...item, task: editText } : item
-  //       ) // editText를 사용
-  //   );
-  //   setEditingId("");
-  //   setEditText(""); // 수정 후 입력값 초기화
-  // };
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form className="todo-form" onSubmit={handleSubmit}>
         <input
+          className="todo-input"
           type="text"
           value={text}
           onChange={(e) => setText(e.target.value)}
+          placeholder="새로운 할 일 입력"
         />
-        <button onClick={() => addTodo()} type="submit">
+        <button className="add-btn" onClick={() => addTodo()} type="submit">
           할 일 등록
         </button>
       </form>
-      <div>
-        {todos.map((todo, _) => (
-          <div style={{ display: "flex", gap: "20px" }}>
-            {/* 수정이 아닐때 */}
+      <div className="todo-list">
+        {todos.map((todo) => (
+          <div className="todo-item" key={todo.id}>
+            {/* 수정 중이 아닐 때 */}
             {editingId !== todo.id && (
-              <div key={todo.id} style={{ display: "flex", gap: "7px" }}>
+              <div className="todo-text">
                 <p>{todo.id}.</p>
                 <p>{todo.task}</p>
               </div>
             )}
             {/* 수정 중일 때 */}
             {editingId === todo.id && (
-              <div key={todo.id} style={{ display: "flex", gap: "7px" }}>
+              <div className="todo-edit">
                 <p>{todo.id}.</p>
                 <input
+                  className="edit-input"
                   defaultValue={todo.task}
                   onChange={(e) => setEditText(e.target.value)}
                 />
               </div>
             )}
-            <button onClick={() => setEditingId(todo.id)}>수정</button>
-            <button onClick={() => deleteTodo(todo.id)}>삭제</button>
-
-            {editingId === todo.id ? (
-              <button onClick={() => updateTodo(editingId, editText)}>
-                수정 완료
+            <div className="todo-actions">
+              {editingId === todo.id ? (
+                <>
+                  <button
+                    className="save-btn"
+                    onClick={() => updateTodo(editingId, editText)}
+                  >
+                    수정 완료
+                  </button>
+                </>
+              ) : (
+                <>
+                  <button
+                    className="edit-btn"
+                    onClick={() => {
+                      setEditingId(todo.id);
+                      setEditText(todo.task); // 수정 시 기존 텍스트를 설정
+                    }}
+                  >
+                    수정 진행
+                  </button>
+                </>
+              )}
+              <button
+                className="delete-btn"
+                onClick={() => deleteTodo(todo.id)}
+              >
+                삭제
               </button>
-            ) : (
-              <button onClick={() => setEditingId(todo.id)}>수정 진행</button>
-            )}
+            </div>
           </div>
         ))}
       </div>
