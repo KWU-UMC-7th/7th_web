@@ -1,0 +1,86 @@
+body{
+    width:758px;
+    margin: auto;
+}
+
+#title {
+    border-bottom: 2px solid rgb(204, 205, 232);
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+
+    padding: 90px 0;         /*위아래 10, 좌우 0*/
+}
+
+#main-content {
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    gap : 10px;
+}
+
+#inputbox {
+    display: flex;
+    width: 620px;
+    height: 45px;
+    border: 2px solid black;
+    outline: none;
+    margin: auto;
+    padding: 0 15px;
+
+    font-size:9pt;
+}
+
+#inputbox:focus{
+    border-color: rgb(48, 103, 190);
+}
+
+/*
+.textbox{
+    width: 100%;  부모 요소의 너비를 가득 채움
+    height: 45px;
+    box-sizing: border-box;  패딩과 테두리를 포함한 너비 설정
+    border: solid 2px blueviolet;
+}
+*/
+
+.column_box {
+    display: flex; /* 가로로 배치 */
+    width: 620px;
+    gap: 200px;     /*리스트 간 간격 조절*/
+
+    margin: auto;
+}
+
+.column {
+    padding: 10px; /* 내용 여백 */
+    flex: 1; /* 동일한 비율로 가로 공간 차지 */
+    text-align: center;
+}
+
+.column span{
+    display: inline-block;
+    font-weight: bold;
+    border-bottom: 2px solid rgb(204, 205, 232);
+    padding-bottom: 1px;
+    margin-bottom: 30px;
+}
+
+.user_element{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    border-bottom: 3px solid rgb(204, 205, 232);
+    padding: 10px 0;
+    margin-bottom: 15px;
+}
+
+.user_element input{
+    border: none;
+    background-color: rgb(204, 205, 232);
+    padding: 4px;
+}
+
