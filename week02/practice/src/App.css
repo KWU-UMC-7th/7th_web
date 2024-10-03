@@ -1,0 +1,15 @@
+.myButton{
+    height:25px;
+}
+.myInput{
+
+    border-bottom: 2px solid green;
+}
+.listItem{
+
+    height:40px;
+
+    align-items: center;
+    margin:10px;
+}
+
