@@ -1,0 +1,64 @@
+/* App.css */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  .form-container {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .todo-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+  }
+  
+  .todo-item {
+    display: flex;
+    gap: 5px;
+  }
+  
+  .todo-id {
+    font-weight: bold;
+  }
+  
+  .todo-task {
+    font-size: 16px;
+  }
+  
+  input[type="text"] {
+    padding: 5px 10px; 
+    font-size: 14px;
+    border-radius: 4px;
+    height: 36px; 
+    box-sizing: border-box; 
+    border: 1px solid #ccc;
+    line-height: 1.2; 
+    vertical-align: middle; 
+    margin-right: 10px;
+  }
+  
+  button {
+    padding: 5px 10px; 
+    font-size: 14px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    height: 36px; 
+    box-sizing: border-box;
+    line-height: 1.2; 
+    vertical-align: middle; 
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
