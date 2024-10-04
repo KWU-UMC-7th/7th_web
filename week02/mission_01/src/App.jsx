@@ -10,7 +10,18 @@ function App() {
   ]);
 
   //todo text박스에서 입력받기 위한 useState
-  const [inputTodo, setInputTdo] = useState();
+  const [inputTodo, setInputTdo] = useState('');
+
+  const handleInputChange = (e) => {
+      setInputTdo(e.target.value)
+  };
+  
+  //수정하기 위한 useState
+  const [updateTodo, setUpdateTodo] = useState('');
+
+  const handleUpdateChange = (e) => {
+    setUpdateTodo(e.target.value)
+  }
 
   //todo list에 새로운 값 추가
   const add_todo = () => {
@@ -18,12 +29,11 @@ function App() {
       ...prev,        //이전에 있던 todo 그대로 가져오기
       inputTodo, 
     ]);
-  }
+  };
 
   //todo list에 값 삭제
   const drop_todo = (index) => {
-    //alert(`${index}가 삭제됨`)
-    alert(`(${todoElement[index]}) 삭제됨`);
+    //alert(`(${todoElement[index]}) 삭제됨`);
     setTodo((prev) => 
       prev.filter((_, i) => i !== index
     )); // 해당 인덱스를 제외한 새 배열 생성
@@ -31,16 +41,20 @@ function App() {
 
   //todo list의 값 수정
   const update_todo = (index) => {
-    alert(`(${todoElement[index]}) 수정됨`); // 수정할 항목의 이름
     
-};
+    alert(`(${todoElement[index]}) 수정됨`); // 수정할 항목의 이름
+    setTodo((prev) => 
+      prev.map((todo, i) => (i === index ? `${updateTodo}` : todo)) // 해당 인덱스의 값을 공백으로 변경
+    );
+  };
 
+  
   //보여지는 화면
   return (
     <>
       <h1>UMC Week02 - mission_01</h1>
       <div className = "Input_Area">
-        <input type="text" value={inputTodo}></input>
+        <input type="text" value={inputTodo} onChange={handleInputChange}></input>
         <input type="button" value="할 일 등록" onClick={add_todo}></input>
       </div>
       <div>
@@ -49,6 +63,7 @@ function App() {
             <div className='todoElement'>
               <span key={index}>{index} : {todo}</span>
               <input type="button" value="삭제하기" onClick={() => drop_todo(index)}></input> 
+              <input type="text" value={updateTodo} onChange={handleUpdateChange}></input>
               <input type="button" value="수정진행" onClick={() => update_todo(index)}></input>
             </div>
           ))}
