@@ -21,7 +21,7 @@ const MovieItem = ({ movie }) => {
       onMouseLeave={handleMouseOff}
     >
       <img 
-        src={`${firstUrl}${movie.backdrop_path}`} 
+        src={`${firstUrl}${movie.poster_path}`} 
         alt={movie.original_title}
         style={{ width: "100%", height: "auto", maxWidth: "150px" }}
       />
