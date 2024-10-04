@@ -1,35 +1,46 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import {useState} from 'react';
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const [todo_list, setTodo] = useState([
+    'mission_01 완성',
+    'mission_02 완성',
+  ]);
+
+  const add_todo = () => {
+
+  }
+
+  const drop_todo = () => {
+    alert("삭제됨")
+  }
+
+  const update_todo = () => {
+    alert("수정됨")
+  }
 
   return (
     <>
+      <h1>UMC Week02 - mission_01</h1>
+      <div className = "Input_Area">
+        <input type="text"></input>
+        <input type="button" value="할 일 등록" onClick={add_todo}></input>
+      </div>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <ul>
+          {todo_list.map((todo, index) => (
+            <div className='todoElement'>
+              <span key={index}> {todo}</span>
+              <input type="button" value="삭제하기" onClick={drop_todo}></input>
+              <input type="button" value="수정진행" onClick={update_todo}></input>
+            </div>
+          ))}
+        </ul>
+        
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
 
-export default App
+export default App;
