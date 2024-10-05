@@ -11,3 +11,8 @@
     width: 50px;
     height: auto;
 }
+
+.movie_element:hover{
+    border: 1px solid rebeccapurple;
+    filter: brightness(0.5);
+}
