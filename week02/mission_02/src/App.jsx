@@ -1,35 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react'
+import { useState } from 'react';
+import { MOVIES } from '../public/mocks/movies.js';
+import './App.css';
 
-function App() {
-  const [count, setCount] = useState(0)
+const IMG_BASE_URL = "https://image.tmdb.org/t/p/w500"
 
+function Movie({title, poster_path,}) {
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <img src={IMG_BASE_URL + poster_path} />
+      <div>{title}</div>
     </>
   )
 }
 
-export default App
+function App() { 
+  return (
+    <>
+    <div>
+      {
+        MOVIES.results.map((item) => {
+          return(
+            <Movie
+              title={item.title}
+              poster_path={item.poster_path}
+            />
+          )
+        })
+      }
+    </div>
+    </>
+  );
+}
+
+export default App;
