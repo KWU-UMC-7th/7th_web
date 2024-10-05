@@ -2,17 +2,14 @@
     display: grid;
     gap:10px;
     grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
-
-    background-color: rebeccapurple;
 }
 
 .movie_element{
-    border: 1px solid black;
-    width: 50px;
+    border-radius: 5px;
+    width: 100%;
     height: auto;
 }
 
 .movie_element:hover{
-    border: 1px solid rebeccapurple;
     filter: brightness(0.5);
 }
