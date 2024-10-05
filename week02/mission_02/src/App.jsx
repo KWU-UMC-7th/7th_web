@@ -5,11 +5,12 @@ import './App.css';
 
 const IMG_BASE_URL = "https://image.tmdb.org/t/p/w500"
 
-function Movie({title, poster_path,}) {
+function Movie({poster_path,}) {
   return (
     <>
-      <img src={IMG_BASE_URL + poster_path} />
-      <div>{title}</div>
+      <div>
+        <img className='movie_element' src={IMG_BASE_URL + poster_path} />
+      </div> 
     </>
   )
 }
@@ -17,14 +18,11 @@ function Movie({title, poster_path,}) {
 function App() { 
   return (
     <>
-    <div>
+    <div className='movie_area'>
       {
         MOVIES.results.map((item) => {
           return(
-            <Movie
-              title={item.title}
-              poster_path={item.poster_path}
-            />
+              <Movie poster_path={item.poster_path}/>
           )
         })
       }

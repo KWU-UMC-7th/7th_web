@@ -1,3 +1,13 @@
-#Input_Area{
+.movie_area{
+    display: grid;
+    gap:10px;
+    grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+
+    background-color: rebeccapurple;
+}
+
+.movie_element{
     border: 1px solid black;
+    width: 50px;
+    height: auto;
 }
