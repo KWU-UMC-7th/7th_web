@@ -1,0 +1,32 @@
+h1{
+    font-weight: bold;
+    color: rgb(108, 177, 192);
+    text-align: center;
+}
+
+.Input_Area{
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.TDO_ele{
+    display: inline-block;
+    width: 200px;
+    border: 1px solid rgb(108, 177, 192);
+}
+
+.todoElement{
+    padding: 5px;
+}
+
+.INP_box{
+    padding:10px;
+    border: none;
+    background-color: rgb(108, 177, 192);
+}
+.INP_btn{
+    padding:10px;
+    border: none;
+    background-color: rgb(108, 177, 192);
+}
+

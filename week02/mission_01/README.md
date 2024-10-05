@@ -1,8 +1,34 @@
-# React + Vite
+# 2주차 키워드
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 여러개 코드 반환
+태그 하나만 반환할 수 있다고 했으니
+한 태그에 전부 넣으면 가능하지 않을까??
 
-Currently, two official plugins are available:
+```js
+// 코드 아래 첨부
+import './App.css'
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+function App() {
+
+  return (
+    <div>
+      <strong>UMC Web react</strong>
+      <div>Reily Looney</div>
+    </div>
+  )
+}
+
+export default App
+```
+
+---
+## 깊은 / 얕은 복사
+
+깊은 복사 : 값을 복사해 원본과 다른 메모리 공간에 저장
+(원본 수정해도 복사본은 유지, 구조적으로 동일)
+
+얕은 복사 : 포인터 변수처럼 메모리에 어떤 값을 가리켜 표현
+(원본 변형되면 복사본도 변형, 같은 객체가 아님)
+
+https://developer.mozilla.org/ko/docs/Glossary/Shallow_copy
+https://developer.mozilla.org/ko/docs/Glossary/Deep_copy

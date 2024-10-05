@@ -41,10 +41,9 @@ function App() {
 
   //todo list의 값 수정
   const update_todo = (index) => {
-    
-    alert(`(${todoElement[index]}) 수정됨`); // 수정할 항목의 이름
+    //alert(`(${todoElement[index]}) 수정됨`);
     setTodo((prev) => 
-      prev.map((todo, i) => (i === index ? `${updateTodo}` : todo)) // 해당 인덱스의 값을 공백으로 변경
+      prev.map((todo, i) => (i === index ? `${updateTodo}` : todo)) // 해당 인덱스의 값을 수정한 값으로 변경
     );
   };
 
@@ -52,23 +51,22 @@ function App() {
   //보여지는 화면
   return (
     <>
-      <h1>UMC Week02 - mission_01</h1>
+      <h1 className='Head_title'>UMC Week02 - mission_01</h1>
       <div className = "Input_Area">
-        <input type="text" value={inputTodo} onChange={handleInputChange}></input>
-        <input type="button" value="할 일 등록" onClick={add_todo}></input>
+        <input className='INP_box' type="text" value={inputTodo} onChange={handleInputChange}></input>
+        <input className='INP_btn' type="button" value="할 일 등록" onClick={add_todo}></input>
       </div>
       <div>
         <ul>
           {todoElement.map((todo, index) => (
             <div className='todoElement'>
-              <span key={index}>{index} : {todo}</span>
-              <input type="button" value="삭제하기" onClick={() => drop_todo(index)}></input> 
-              <input type="text" value={updateTodo} onChange={handleUpdateChange}></input>
-              <input type="button" value="수정진행" onClick={() => update_todo(index)}></input>
+              <span className='TDO_ele' key={index}>{index} : {todo}</span>
+              <input className='DEL_btn' type="button" value="삭제하기" onClick={() => drop_todo(index)}></input> 
+              <input className='UDT_btn' type="button" value="수정진행" onClick={() => update_todo(index)}></input>
+              <input className='UDT_box'type="text" value={updateTodo} onChange={handleUpdateChange}></input>
             </div>
           ))}
         </ul>
-        
       </div>
     </>
   )
