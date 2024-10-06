@@ -1,0 +1,103 @@
+/* 전체 레이아웃을 중앙 정렬 */
+.app-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .todo-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .todo-input {
+    flex-grow: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  .todo-input:focus {
+    border-color: #a4cafe;
+  }
+  
+  .add-btn {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .add-btn:hover {
+    background-color: #45a049;
+  }
+  
+  .todo-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .todo-text p {
+    margin: 0;
+  }
+  
+  .todo-edit {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .edit-input {
+    flex-grow: 1;
+    padding: 8px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .delete-btn, .edit-btn, .update-btn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .delete-btn:hover {
+    background-color: #e53935;
+  }
+  
+  .edit-btn {
+    background-color: #2196f3;
+  }
+  
+  .edit-btn:hover {
+    background-color: #1976d2;
+  }
+  
+  .update-btn {
+    background-color: #ff9800;
+  }
+  
+  .update-btn:hover {
+    background-color: #fb8c00;
+  }
+  
