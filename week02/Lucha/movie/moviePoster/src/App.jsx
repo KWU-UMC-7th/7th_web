@@ -33,7 +33,6 @@ const MovieItem = ({ movie }) => {
         alt={movie.original_title}
         style={{ width: "100%", height: "auto", maxWidth: "150px", borderRadius: "10px" }}
       />
-      {/* Hover 시 색상 배경과 텍스트 표시 */}
       {isPosterHovered && (
         <div style={{
           position: "absolute",
@@ -64,15 +63,8 @@ const App = () => {
       padding: "20px", 
       borderRadius: "15px" 
     }}>
-      {/* 10개씩 2줄로 출력 */}
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(10, 1fr)", gap: "10px" }}>
-        {movies.slice(0, 10).map((movie) => (
-          <MovieItem key={movie.id} movie={movie} />
-        ))}
-      </div>
-
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(10, 1fr)", gap: "10px", marginTop: "20px" }}>
-        {movies.slice(10, 20).map((movie) => (
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: "10px" }}>
+        {movies.map((movie) => (
           <MovieItem key={movie.id} movie={movie} />
         ))}
       </div>
