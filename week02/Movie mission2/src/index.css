@@ -1,0 +1,47 @@
+body {
+  background-color: black;
+}
+
+.app-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.movie-container {
+  width: 150px;
+  margin: 5px;
+  background-color: rgba(55, 52, 52, 0.858);
+  color: white;
+  border-radius: 5px;
+}
+
+.movie-container img{
+  max-width: 100%;
+}
+
+.movie-info {
+  display: flex;
+  padding: 5px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.movie-info h4 {
+  margin: 0;
+}
+
+.movie-info span{
+  margin-left: 3px;
+}
+/*추가한 부분*/
+.overlay {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.movie-poster-container:hover .overlay {
+  opacity: 1;
+}
