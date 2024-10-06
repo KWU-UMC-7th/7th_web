@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
 import Poster from "./Poster";
-
+import styled from 'styled-components';
 const Popular = () => {
     const [movies, setMovies] = useState([])
 
@@ -18,13 +18,20 @@ const Popular = () => {
     }, []);
 
     return (
-<div className='posters'>
+        <Posters>
             { movies.data?.results.map((movie) => (
-                <Poster key={movie.id} id={movie.id} coverImg={movie.poster_path} title={movie.original_title} 
-                rating={movie.vote_average} overview={movie.overview} />
+                <Poster key={movie.id} id={movie.id} coverImg={movie.poster_path} title={movie.title} 
+                release_date = {movie.release_date} />
                 ))}
-        </div>
+        </Posters>
     )
 };
 
 export default Popular;
+
+const Posters = styled.div`
+   display: inline-flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 20px;
+`;
