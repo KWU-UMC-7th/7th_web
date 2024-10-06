@@ -7,11 +7,12 @@ const Sidebar = () => {
     return (
         <Nav>
             <Search><Linkk to={'/search'}>
-            <IoSearch />
-            찾기</Linkk></Search>
+            <IoSearch /><Text>찾기</Text>
+                </Linkk></Search>
             <Movies><Linkk to={'/movies'}>
-            <BiCameraMovie />
-            영화</Linkk></Movies>
+            <BiCameraMovie /><Text>
+            영화</Text>
+            </Linkk></Movies>
         </Nav>
     );
 };
@@ -25,8 +26,7 @@ const Search = styled.div`
     font-size: 15px;
     font-weight: bold;
     color: white;
-    gap: 10px;
-    margin-bottom: 15px;
+    margin: 16px;
     `;
 
 const Movies = styled.div`
@@ -36,8 +36,12 @@ const Movies = styled.div`
     font-size: 15px;
     font-weight: bold;
     color: white;
-    gap: 10px;
+    margin: 16px;
     `;
+
+const Text = styled.div`
+    margin-left: 10px;
+`;
 
 const Linkk = styled(Link)`
     font-weight: bold;
@@ -47,11 +51,13 @@ const Linkk = styled(Link)`
         text-decoration: none;
     }
         text-decoration: none;
+    display: flex;
+    align-items: center;
 `;
 
 const Nav = styled.div`
-    background-color: #333;
+    background-color: #2D2D2D;
     align-items: center;
-    width: 140px;
+    min-width: 140px;
     height: 100vh;
 `;

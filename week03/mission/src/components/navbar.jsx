@@ -38,18 +38,19 @@ const Linkk = styled(Link)`
 `;
 
 const Nav = styled.div`
-width: 1280px;
+width: 100vw;
     display: flex;
     justify-content: space-between;
-    background-color: #333;
+    background-color: #2D2D2D;
     align-items: center;
     position: sticky;
     top: 0;
     z-index: 1;
+    padding: 10px;
 `;
 
 const SignDiv = styled.div`
-    margin-right: 20px;
+    margin-right: 40px;
     font-size: 15px;
     font-weight: bold;
     color: white;
@@ -59,6 +60,8 @@ const SignDiv = styled.div`
 
 const Login = styled.div`
 margin-right: 20px;
+padding: 5px;
+border-radius: 10px;
 :hover {
 background-color: #DC1767;
 padding: 5px;
@@ -72,9 +75,6 @@ const Join = styled.div`
         align-items: center;
         padding: 5px;
     :hover {
-        background-color: white;
-        color: #DC1767;
-        padding: 5px;
-        border-radius: 10px;
+    color: black;
     }
 `;
