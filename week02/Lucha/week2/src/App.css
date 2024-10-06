@@ -1,0 +1,104 @@
+/* 전체 컨테이너 */
+.todo-container {
+  width: 100%;
+  max-width: 600px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f2f0e6;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+.todo-form {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.todo-input {
+  flex: 1;
+  padding: 10px;
+  border: 2px solid #9b7e3e;
+  border-radius: 8px;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.add-btn {
+  background-color: #9b7e3e;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.add-btn:hover {
+  background-color: #715a2b;
+}
+
+.todo-list {
+  margin-top: 20px;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  background-color: #e8dab2;
+  border: 2px solid #9b7e3e;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.todo-text,
+.todo-edit {
+  display: flex;
+  align-items: center;
+}
+
+.todo-id {
+  margin-right: 10px;
+  color: #52734d;
+}
+
+/* 버튼 공통 */
+.btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.delete-btn {
+  background-color: #dc6868;
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #b95050;
+}
+
+.edit-btn,
+.update-btn {
+  background-color: #52734d;
+  color: white;
+}
+
+.edit-btn:hover,
+.update-btn:hover {
+  background-color: #406141;
+}
+
+.edit-input {
+  padding: 6px;
+  border: 2px solid #9b7e3e;
+  border-radius: 6px;
+  font-size: 14px;
+}
