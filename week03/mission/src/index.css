@@ -7,6 +7,9 @@
   body {
     margin: 0;
     display: flex;
+    background-color: black;
+    color: white;
+    padding: 20px;
   }
   
   .posters{
