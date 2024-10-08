@@ -1,7 +1,60 @@
 import React, { useState } from "react";
-import { MOVIES } from "./mocks/movie";
+import styled from "styled-components";
+import { MOVIES } from "./mocks/movies";
 
 const imageBaseUrl = "https://image.tmdb.org/t/p/w500";
+
+// Styled Components
+const StyledMovieItem = styled.div`
+  position: relative;
+  text-align: center;
+  width: 150px;
+  height: auto;
+  margin: auto;
+  transition: transform 0.3s ease-in-out;
+  transform: ${({ $isHovered }) => ($isHovered ? "scale(1.05)" : "scale(1)")};
+
+  img {
+    width: 100%;
+    height: auto;
+    max-width: 150px;
+    border-radius: 10px;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 98%;
+    background-color: ${({ $bgColor }) => $bgColor || 'rgba(0, 0, 0, 0.7)'};
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+  }
+`;
+
+const AppContainer = styled.div`
+  background: black;
+  padding: 20px;
+  color: white;
+`;
+
+const App = () => {
+  const movies = MOVIES.results;
+
+  return (
+    <AppContainer>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: "10px" }}>
+        {movies.map((movie) => (
+          <MovieItem key={movie.id} movie={movie} />
+        ))}
+      </div>
+    </AppContainer>
+  );
+};
 
 const MovieItem = ({ movie }) => {
   const [isPosterHovered, setIsPosterHovered] = useState(false);
@@ -15,60 +68,21 @@ const MovieItem = ({ movie }) => {
   };
 
   return (
-    <div 
-      style={{ 
-        position: "relative", 
-        textAlign: "center", 
-        width: "150px", 
-        height: "auto", 
-        margin: "auto", 
-        transition: "transform 0.3s ease-in-out",
-        transform: isPosterHovered ? "scale(1.05)" : "scale(1)"
-      }}
+    <StyledMovieItem
+      $isHovered={isPosterHovered}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <img 
-        src={`${imageBaseUrl}${movie.poster_path}`} 
+      <img
+        src={`${imageBaseUrl}${movie.poster_path}`}
         alt={movie.original_title}
-        style={{ width: "100%", height: "auto", maxWidth: "150px", borderRadius: "10px" }}
       />
       {isPosterHovered && (
-        <div style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "96%",
-          backgroundColor: `rgba(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, 0.7)`,
-          color: "white",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          borderRadius: "10px"
-        }}>
+        <div className="overlay">
           <p>{movie.original_title}</p>
         </div>
       )}
-    </div>
-  );
-};
-
-const App = () => {
-  const movies = MOVIES.results;
-
-  return (
-    <div style={{ 
-      background: "linear-gradient(135deg, #b2d8d8, #d6e4aa)", 
-      padding: "20px", 
-      borderRadius: "15px" 
-    }}>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: "10px" }}>
-        {movies.map((movie) => (
-          <MovieItem key={movie.id} movie={movie} />
-        ))}
-      </div>
-    </div>
+    </StyledMovieItem>
   );
 };
 

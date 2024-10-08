@@ -1,23 +1,29 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
+  background-color: #000;
+  /* 배경색을 검정색으로 변경 */
+  color: #fff;
+  /* 기본 글자색을 흰색으로 변경 */
 }
 
 .logo {
   height: 6em;
-  padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
+  filter: none;
+  /* 기본 필터를 제거 */
 }
 
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 2em #000);
+  /* hover 시 검정색으로 필터 변경 */
 }
 
 .logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  filter: drop-shadow(0 0 2em #000);
+  /* hover 시 검정색으로 필터 변경 */
 }
 
 @keyframes logo-spin {
@@ -38,8 +44,15 @@
 
 .card {
   padding: 2em;
+  background-color: transparent;
+  /* 카드 배경색을 투명으로 설정 */
+  border-radius: 8px;
+  /* 카드 모서리 둥글게 */
+  box-shadow: none;
+  /* 그림자 제거 */
 }
 
 .read-the-docs {
-  color: #888;
+  color: #fff;
+  /* 글자색을 흰색으로 변경 */
 }
