@@ -1,67 +1,19 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import './App.css';
+import { useState } from 'react';
 
-import MoviePage from './components/Moviepage.jsx'
-import RootLayout from './layout/root-layout.jsx';
-import LoginPage from './pages/Loginpage.jsx'
-import SignupPage from './pages/Signuppage.jsx'
-import SearchPage from './pages/Searchpage.jsx'
-import CategoryPage from './pages/Categorypage.jsx'
-
-import NowplayingPage from './pages/moviePages/Nowplayingpage.jsx';
-import PopularPage from './pages/moviePages/Popularpage.jsx';
-import TopratedPage from './pages/moviePages/Topratedpage.jsx';
-import UpcomingPage from './pages/moviePages/Upcomingpage.jsx';
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <RootLayout />,
-    children: [
-      {
-        index: true,
-        element: <MoviePage />
-      },
-      {
-        path: '/login',
-        element: <LoginPage />
-      },
-      {
-        path: '/signup',
-        element: <SignupPage />
-      },
-      {
-        path: '/search',
-        element: <SearchPage />
-      },
-      {
-        path: '/movies',
-        element: <CategoryPage />
-      },
-      {
-        path: '/movies/now-playing',
-        element: <NowplayingPage />
-      },
-      {
-        path: '/movies/popular',
-        element: <PopularPage />
-      },
-      {
-        path: '/movies/top-rated',
-        element: <TopratedPage />
-      },
-      {
-        path: '/movies/up-coming',
-        element: <UpcomingPage />
-      },
-    ]
-  },
-
-])
-
+import MoviePoster from './components/MoviePoster';
+import { MOVIES } from '../src/mocks/movie';
 
 function App() {
+  const movies = MOVIES.results;
+
+
   return (
-    <RouterProvider router={router} />
+    <div style={{ display: "grid", gap: '10px', gridTemplateColumns: 'repeat(10, 1fr)' }}>
+      {movies.map((e) => (
+        <MoviePoster poster_path={e.poster_path} key={e.id} />
+      ))
+      }
+    </div>
   );
 }
 
