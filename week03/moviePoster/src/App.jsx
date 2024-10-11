@@ -1,89 +1,56 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import { MOVIES } from "./mocks/movies";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-const imageBaseUrl = "https://image.tmdb.org/t/p/w500";
+import "./App.css";
 
-// Styled Components
-const StyledMovieItem = styled.div`
-  position: relative;
-  text-align: center;
-  width: 150px;
-  height: auto;
-  margin: auto;
-  transition: transform 0.3s ease-in-out;
-  transform: ${({ $isHovered }) => ($isHovered ? "scale(1.05)" : "scale(1)")};
+import RootLayout from "./layout/RootLayout.jsx";
+import MoviesPage from "./pages/MoviesPage.jsx";
+import LoginPage from "./pages/LoginPage.jsx";
+import SignsupPage from "./pages/SignupPage.jsx";
+import CategoryPage from "./pages/Category.jsx";
+import SearchPage from "./pages/SearchPage.jsx";
+import NowPlayingPage from "./pages/NowPlayingPage.jsx";
+import PopularPage from "./pages/PopularPage.jsx";
+import TopRatedPage from "./pages/TopRatedPage.jsx";
+import UpcomingPage from "./pages/UpComingPage.jsx";
 
-  img {
-    width: 100%;
-    height: auto;
-    max-width: 150px;
-    border-radius: 10px;
-  }
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <RootLayout />,
+    // 1. Navbar 밑에 path에 해당하는 element를 보여주고 싶으면 아래와 같이 children을 활용
+    children: [
+      {
+        // 2. index: true는 위의 path: '/' 즉, 홈 경로를 의미한다.
+        index: true,
+        element: <MoviesPage />,
+      },
+      {
+        path: "login",
+        element: <LoginPage />,
+      },
+      {
+        path: "signup",
+        element: <SignsupPage />,
+      },
+      {
+        path: "search",
+        element: <SearchPage />,
+      },
+      {
+        path: "category",
+        element: <CategoryPage />,
+      },
+      { path: "category/now-playing", element: <NowPlayingPage /> },
+      { path: "category/popular", element: <PopularPage /> },
+      { path: "category/top-rated", element: <TopRatedPage /> },
+      { path: "category/upcoming", element: <UpcomingPage /> },
+      {errorElement: <h1>너는 없는 경로에 들어왔다 ^ㅁ^ 야호~!</h1>}
+    ],
+  },
+]);
 
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 98%;
-    background-color: ${({ $bgColor }) => $bgColor || 'rgba(0, 0, 0, 0.7)'};
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-  }
-`;
-
-const AppContainer = styled.div`
-  background: black;
-  padding: 20px;
-  color: white;
-`;
-
-const App = () => {
-  const movies = MOVIES.results;
-
-  return (
-    <AppContainer>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: "10px" }}>
-        {movies.map((movie) => (
-          <MovieItem key={movie.id} movie={movie} />
-        ))}
-      </div>
-    </AppContainer>
-  );
-};
-
-const MovieItem = ({ movie }) => {
-  const [isPosterHovered, setIsPosterHovered] = useState(false);
-
-  const handleMouseEnter = () => {
-    setIsPosterHovered(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsPosterHovered(false);
-  };
-
-  return (
-    <StyledMovieItem
-      $isHovered={isPosterHovered}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
-      <img
-        src={`${imageBaseUrl}${movie.poster_path}`}
-        alt={movie.original_title}
-      />
-      {isPosterHovered && (
-        <div className="overlay">
-          <p>{movie.original_title}</p>
-        </div>
-      )}
-    </StyledMovieItem>
-  );
-};
+function App() {
+  return <RouterProvider router={router} />;
+}
 
 export default App;
