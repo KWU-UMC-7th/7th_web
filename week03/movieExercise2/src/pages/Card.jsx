@@ -1,62 +1,58 @@
-import {useState} from 'react'
-import styled from 'styled-components'
+import { useState } from 'react';
+import styled from 'styled-components';
 
-export default function Card({id, coverImg, title, date}) {
-    const [isHover, setIsHover] = useState(false)
-    const onMouseEnter = () => {
-        setIsHover(true)
-    }
-    const onMouseLeave = () => {
-        setIsHover(false)
-    }
-    return (
-        <CardDiv onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
-            <Img src={`https://image.tmdb.org/t/p/original/${coverImg}`} alt={title}/>
-            {isHover && <Overlay />}
-            <Title>{title}</Title>
-            <Date>{date}</Date>
-        </CardDiv>
-    )
+export default function Card({ id, coverImg, title, date }) {
+  const [hovered, setHovered] = useState(false);
+
+  const handleMouseEnter = () => setHovered(true);
+  const handleMouseLeave = () => setHovered(false);
+
+  return (
+    <Container onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+      <Image src={`https://image.tmdb.org/t/p/original/${coverImg}`} alt={title} />
+      {hovered && <HoverEffect />}
+      <Text>{title}</Text>
+      <ReleaseDate>{date}</ReleaseDate>
+    </Container>
+  );
 }
 
-const CardDiv = styled.div`
+const Container = styled.div`
     width: 116px;
-    justify-content: center;
     position: relative;
-`;
-
-const Title = styled.p`
-    font-size: 13px;
-    font-weight: 600;
-    margin:0;
-    `;
-const Date = styled.p`
-    font-size: 11px;
-    font-weight: 500;
-    margin:0;
-    `;
-
-const Img = styled.img`
-    width: 100%;
-    object-fit: cover; /* 이미지 비율 유지하면서 부모 크기에 맞추기 */
-    border-radius: 5px;
-    `;
-
-const Overlay = styled.div`
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
+`;
+
+const Image = styled.img`
+    width: 100%;
+    border-radius: 5px;
+    object-fit: cover;
+`;
+
+const Text = styled.p`
+    font-size: 12px;
+    font-weight: bold;
+    margin: 0;
+`;
+
+const ReleaseDate = styled.p`
+    font-size: 10px;
+    margin: 0;
+`;
+
+const HoverEffect = styled.div`
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    display: flex;
     justify-content: center;
     align-items: center;
     opacity: 0;
-    transition: 0.3s ease;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 5px;
-    ${CardDiv}:hover & {
-        opacity: 1;
-    }
-    `;
+    transition: opacity 0.3s ease-in-out;
+
+  ${Container}:hover & {
+    opacity: 1;
+  }
+`;

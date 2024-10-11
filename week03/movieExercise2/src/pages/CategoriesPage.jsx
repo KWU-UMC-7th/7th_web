@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom'; // Link 컴포넌트 추가
 import styled from 'styled-components';
-import presentImg from '../categoryImg/present.jpg';
-import popularImg from '../categoryImg/famous.jpg';
-import topratedImg from '../categoryImg/highrated.jpg';
-import upcomingImg from '../categoryImg/commingsoon.jpg';
+import nowPlayingImg from '../categoryImg/nowplaying.jpg';
+import popularImg from '../categoryImg/popular.jpg';
+import topratedImg from '../categoryImg/toprated.jpg';
+import upcomingImg from '../categoryImg/upcoming.jpg';
 
 
 
@@ -15,7 +15,7 @@ const CategoriesPage = () => {
                 {/* 현재 상영중인 카테고리 */}
                 <Link to="/movies/now-playing">  {/* 클릭 시 /movies/now-playing로 이동 */}
                     <CategoryContainer>
-                        <CategoryImage src={presentImg} alt="현재 상영중인" />
+                        <CategoryImage src={nowPlayingImg} alt="현재 상영중인" />
                         <CategoryLabel>현재 상영중인</CategoryLabel>
                     </CategoryContainer>
                 </Link>
