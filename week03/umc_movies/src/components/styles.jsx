@@ -56,7 +56,7 @@ export const MainContainer = styled.div`
 
 export const Sidebar = styled.div`
   width: 150px; /* 사이드바 너비 설정 */
-  background-color: black; /* 사이드바 배경색 */
+  background-color: #111; /* 사이드바 배경색 */
   padding: 1rem; /* 사이드바 안쪽 여백 */
 `;
 export const SearchContainer = styled.div`

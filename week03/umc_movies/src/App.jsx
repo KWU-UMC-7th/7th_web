@@ -9,6 +9,11 @@ import Signup from  "./pages/signup.jsx";
 import NotFound from "./pages/not-found.jsx";
 import Search from "./pages/search.jsx";
 import Category from "./pages/category.jsx";
+import NowPlaying from "./pages/now-playing.jsx";
+import Popular from './pages/popular';
+import TopRated from './pages/top-rated';
+import UpComing from './pages/upcoming';
+
 import RootLayout from "./layout/root-layout.jsx";
 // 2. 연결
 const router = createBrowserRouter([
@@ -38,6 +43,24 @@ const router = createBrowserRouter([
             {
                 path: '/category/:id',
                 element: <Category/>
+            },
+            {
+                path: '/movies/now-playing',
+                element: <NowPlaying/>
+            },
+            {
+                path: '/movies/popular', 
+                element: <Popular />
+            },
+
+            {
+                path: '/movies/top-rated', 
+                element: <TopRated />
+            },
+
+            {
+                path: '/movies/upcoming', 
+                element: <UpComing />
             }
         ]
     },
