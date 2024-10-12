@@ -67,27 +67,26 @@ const MovieInfo = styled.div`
   text-align: center;
 `;
 
-// 영화 리스트 그리드 스타일
 const MoviesGrid = styled.div`
   display: grid;
   gap: 10px;
-  grid-template-columns: repeat(5, 1fr); /* 기본 5칸 그리드 */
+  grid-template-columns: repeat(9, 1fr);
   width: 100%;
 
   @media (max-width: 1200px) {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(7, 1fr);
   }
 
   @media (max-width: 900px) {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(5, 1fr);
   }
 
   @media (max-width: 600px) {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   @media (max-width: 400px) {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 `;
 

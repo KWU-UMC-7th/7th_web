@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { MdOutlineMovie } from "react-icons/md";
-import { MdOutlineSearch } from "react-icons/md";
+import { MdMovie } from "react-icons/md";
+import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const SideBar = () => {
@@ -8,12 +8,14 @@ const SideBar = () => {
     <StyledSideBar>
       <Link to="/search" style={{ textDecoration: "none" }}>
         <ContentDiv>
-          <MdOutlineSearch /> 검색
+          <FaSearch />
+          <Text>찾기</Text>
         </ContentDiv>
       </Link>
       <Link to="/category" style={{ textDecoration: "none" }}>
         <ContentDiv>
-          <MdOutlineMovie /> 영화
+          <MdMovie />
+          <Text>영화</Text>
         </ContentDiv>
       </Link>
     </StyledSideBar>
@@ -27,6 +29,11 @@ const ContentDiv = styled.div`
   padding-bottom: 10px;
   font-size: 15px;
 `;
+
+const Text = styled.span`
+  transform: translateY(-5px); 
+`;
+
 const StyledSideBar = styled.div`
   padding: 10px 20px;
   float: left;

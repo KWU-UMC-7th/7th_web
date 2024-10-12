@@ -1,7 +1,10 @@
 import styled from "styled-components";
 import CategoryButton from "../components/movieCategory";
-
 import { Link } from "react-router-dom";
+import category1 from "@/imgs/category1.png";
+import category2 from "@/imgs/category2.jpg";
+import category3 from "@/imgs/category3.png";
+import category4 from "@/imgs/category4.png";
 
 const CategoryPage = () => {
   return (
@@ -11,25 +14,25 @@ const CategoryPage = () => {
         <Link to="/category/now-playing">
           <CategoryButton
             text="현재 상영중인"
-            imageUrl="https://cdn.pixabay.com/photo/2024/09/23/05/54/wave-9067749_1280.jpg"
-          />{" "}
+            imageUrl={category1} 
+          />
         </Link>
         <Link to="/category/popular">
           <CategoryButton
             text="인기있는"
-            imageUrl="https://cdn.pixabay.com/photo/2024/01/04/16/25/reservoir-8487798_1280.jpg"
+            imageUrl={category2} 
           />
         </Link>
         <Link to="/category/top-rated">
           <CategoryButton
             text="높은 평가를 받은"
-            imageUrl="https://cdn.pixabay.com/photo/2024/01/17/17/14/bird-8515097_1280.jpg"
+            imageUrl={category4} 
           />
         </Link>
         <Link to="/category/upcoming">
           <CategoryButton
             text="개봉 예정중인"
-            imageUrl="https://cdn.pixabay.com/photo/2023/09/25/07/54/lemon-cake-8274419_1280.jpg"
+            imageUrl={category3}
           />
         </Link>
       </StyledDiv>
@@ -54,4 +57,5 @@ const StyledCategoryList = styled.h2`
   color: white;
   margin: 0;
 `;
+
 export default CategoryPage;

@@ -8,13 +8,13 @@ const Navbar = () => {
         <HomeButton>Yongcha</HomeButton>
       </Link>
       <FlexDiv>
-        <Link to="/signup">
-          <Button hoverBackground="#ffcc00">signup</Button>
-        </Link>
         <Link to="/login">
-          <Button color="white" backgroundColor="#e10f57" hoverBackground="#34eb5b">
-            Login
+          <Button color="white" hoverBackground="#34eb5b">
+            로그인
           </Button>
+        </Link>
+        <Link to="/signup">
+          <Button color="white" backgroundColor="#e10f57" hoverBackground="#ffcc00">회원가입</Button>
         </Link>
       </FlexDiv>
     </StyledNavbar>

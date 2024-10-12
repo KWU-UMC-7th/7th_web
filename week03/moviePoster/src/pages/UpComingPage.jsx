@@ -59,19 +59,19 @@ const MovieDetails = styled.div`
 const MovieList = styled.div`
   display: grid;
   gap: 10px;
-  grid-template-columns: repeat(10, 1fr);
+  grid-template-columns: repeat(9, 1fr);
   width: 100%;
 
   @media (max-width: 1200px) {
-    grid-template-columns: repeat(8, 1fr);
+    grid-template-columns: repeat(7, 1fr);
   }
 
   @media (max-width: 900px) {
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(5, 1fr);
   }
 
   @media (max-width: 600px) {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   @media (max-width: 400px) {
