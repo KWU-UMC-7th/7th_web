@@ -1,0 +1,15 @@
+.movie_area{
+    display: grid;
+    gap:10px;
+    grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+}
+
+.movie_element{
+    border-radius: 5px;
+    width: 100%;
+    height: auto;
+}
+
+.movie_element:hover{
+    filter: brightness(0.5);
+}
