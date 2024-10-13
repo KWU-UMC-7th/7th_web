@@ -1,0 +1,230 @@
+@import 'reset.css';
+
+.root-wrap {
+  position:absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.header-container {
+  background-color: green;
+}
+
+.header-wrap {
+  height: 64px;
+  max-width: 1400px;
+  margin: 0 auto;
+  
+  display: flex;
+  align-items: center;
+}
+
+.header-left-wrap {
+  display:flex;
+
+}
+
+.header-left-wrap ul {
+  display: flex;
+  margin-left: 20px;
+}
+
+.header-left-wrap li {
+  margin-right: 15px;
+  padding: 8px;
+}
+
+.header-nav-item {
+  color: rgb(255, 255, 255);
+  text-decoration: none;  /*밑줄없애기*/
+  font-weight: 600;
+
+}
+
+.page-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 33px 0;
+
+}
+body {
+  background-color: black;
+}
+
+.app-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.movie-container {
+  width: 150px;
+  margin: 5px;
+  background-color: rgba(55, 52, 52, 0.858);
+  color: white;
+  border-radius: 5px;
+}
+
+.movie-container img{
+  max-width: 100%;
+}
+
+.movie-info {
+  display: flex;
+  padding: 5px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.movie-info h4 {
+  margin: 0;
+}
+
+.movie-info span{
+  margin-left: 3px;
+}
+/*추가한 부분*/
+.overlay {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.movie-poster-container:hover .overlay {
+  opacity: 1;
+}
+.sidebar {
+  width: 200px;
+  background-color: #333;
+  color: white;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 20px;
+}
+
+.sidebar li a {
+  color: white;
+  text-decoration: none;
+}
+
+.sidebar li a:hover {
+  color: #f1f1f1;
+}
+/* 기본 사이드바 스타일 */
+.sidebar {
+  width: 200px;
+  background-color: #000000e7;
+  color: white;
+  height: 100vh;
+  padding: 20px;
+  position: fixed;
+  transition: width 0.3s ease; /* 부드러운 크기 변경 */
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 20px;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* 화면 크기에 따른 유동적인 사이드바 */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 150px; /* 화면 크기가 작아지면 사이드바 너비를 줄임 */
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100px; /* 더 작은 화면에서 너비를 더 줄임 */
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    width: 60px; /* 모바일 화면에서는 최소 너비로 설정 */
+  }
+  
+  .sidebar ul li a {
+    font-size: 14px; /* 글자 크기 축소 */
+  }
+}
+
+/* Sidebar.css 또는 해당 CSS 파일에 추가 */
+.message {
+  position: fixed; /* 고정 위치 */
+  top: 50%; /* 수직 중앙 */
+  left: 50%; /* 수평 중앙 */
+  transform: translate(-50%, -50%); /* 정확한 중앙 정렬 */
+  color: white; /* 글자색 흰색 */
+  font-size: 24px; /* 글자 크기 조정 */
+  z-index: 1000; /* 다른 요소 위에 표시 */
+}
+/* Sidebar.css */
+
+.sidebar {
+  background-color: black; /* 배경색 */
+  color: white; /* 글자색 */
+  padding: 20px; /* 패딩 */
+  height: 100vh; /* 전체 높이 */
+  position: fixed; /* 고정 위치 */
+  top: 0; /* 상단 고정 */
+  transition: width 0.3s; /* 너비 변화 시 애니메이션 */
+}
+
+.sidebar ul {
+  list-style-type: none; /* 리스트 스타일 제거 */
+  padding: 0; /* 기본 패딩 제거 */
+}
+
+.sidebar li {
+  margin: 15px 0; /* 리스트 항목 간격 */
+}
+
+.sidebar a {
+  color: white; /* 링크 색상 */
+  text-decoration: none; /* 밑줄 제거 */
+}
+
+.sidebar a:hover {
+  text-decoration: underline; /* 마우스 오버 시 밑줄 */
+}
+
+.movie-list {
+  display: flex; /* 플렉스 박스 설정 */
+  flex-wrap: wrap; /* 여러 줄로 표시 */
+  gap: 20px; /* 아이템 간격 */
+}
+
+.movie-item {
+  background-color: #444; /* 아이템 배경 색 */
+  padding: 10px; /* 내부 여백 */
+  border-radius: 5px; /* 모서리 둥글게 */
+  text-align: center; /* 텍스트 중앙 정렬 */
+}
+
+.movie-item img {
+  max-width: 100%; /* 이미지 너비 조정 */
+  height: auto; /* 비율 유지 */
+}

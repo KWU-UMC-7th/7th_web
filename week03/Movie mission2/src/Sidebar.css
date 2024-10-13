@@ -1,0 +1,27 @@
+/* 기본 사이드바 스타일 */
+.sidebar {
+    width: 200px;
+    background-color: black;
+    color: white;
+    height: 100vh;
+    padding: 20px;
+    position: fixed;
+    transition: width 0.3s ease; /* 부드러운 크기 변경 */
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    margin-bottom: 20px;
+  }
+  
+  .sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  
+  
