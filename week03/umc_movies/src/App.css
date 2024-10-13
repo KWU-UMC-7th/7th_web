@@ -1,0 +1,23 @@
+.APP{
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+/* App.css 또는 전역 CSS 파일 */
+body {
+  background-color: black; /* 배경색을 검정색으로 설정 */
+  color: white; /* 글자 색상을 흰색으로 설정 (선택 사항) */
+}
+
+
+
+/* img {
+  margin-top: 20px;
+  border-radius: 8px;
+  transition: filter 0.3s ease; 
+  display: inline-block;
+  width: 100%; 
+}
+
+img:hover {
+  filter: brightness(70%); } */
