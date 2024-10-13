@@ -9,6 +9,7 @@ import NotFound from './pages/error.jsx';
 import MoviesPage from './pages/movies.jsx';
 import LogIn from './pages/login.jsx';
 import Signup from './pages/signup.jsx';
+import SearchPage from './pages/search.jsx';
 
 const router = createBrowserRouter([
   //접근 경로 처리
@@ -21,7 +22,6 @@ const router = createBrowserRouter([
         index: '/',
         element: <HomePage/>
       },
-      
       {
         path: 'movies',
         element: <MoviesPage/>
@@ -33,6 +33,10 @@ const router = createBrowserRouter([
       {
         path: 'signup',
         element: <Signup/>
+      },
+      {
+        path: 'search',
+        element: <SearchPage/>
       }
     ]
   }

@@ -6,12 +6,39 @@ const IMG_BASE_URL = "https://image.tmdb.org/t/p/w500"
 function Movie({poster_path}) {
     return (
       <>
-        <div>
+        <CardStyle>
           <img className='movie_element' src={IMG_BASE_URL + poster_path} />
-        </div> 
+        </CardStyle> 
       </>
     )
   }
+
+/*
+const MoviesPage = () => {
+    const [movies, setMovies] = useState([])
+    
+    useEffect(() => {
+        const getMovies = async () => {
+            const movies = await axios.get(`https://api.themoviedb.org/3/movie/popular?language=en-US&page=1`, {
+                headers: {
+                    Authorization: `Bearer 토큰`,
+                }
+            })
+            setMovies(movies);
+        }
+        getMovies()
+    }, []);
+    
+    return (
+        <S.CardList>
+            {movies.data?.results.map((movie) => (
+                <Card key={movie.id} movie={movie}/>
+            ))}
+        </S.CardList>
+    )
+};
+
+*/
 
 const Card = ({ movie }) => {
   return (
@@ -30,5 +57,10 @@ const CardArea = styled.div`
 
     display: grid;
     gap:10px;
-    grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+    grid-template-columns: repeat(7, 1fr);
+`
+
+const CardStyle = styled.div`
+  max-width: 100px;
+  height: auto;
 `
